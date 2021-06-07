@@ -1,7 +1,7 @@
 import argparse
 from urllib.request import Request, urlopen
 import hashlib
-from playsound import playsound
+import simpleaudio as sa
 import sched, time
 from datetime import datetime
 
@@ -29,7 +29,7 @@ def checkWebsite(sc):
 
     if (newMd5 != oldMd5):
         print(f'Website ({args.url}) has changed!', end='\r')
-        playsound('alarm.mp3')
+        sa.WaveObject.from_wave_file('alarm.wav').play().wait_done()
     else:
         print(f'Website ({args.url}) has not changed – Last checked: {datetime.now().time()}', end='\r')
 
