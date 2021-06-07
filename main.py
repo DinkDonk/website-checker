@@ -1,5 +1,5 @@
 import argparse
-import urllib.request
+from urllib.request import Request, urlopen
 import hashlib
 import simpleaudio as sa
 import sched, time
@@ -12,7 +12,8 @@ parser.add_argument('--interval', type=int, default=5, help='Check interval (sec
 args = parser.parse_args()
 
 def getWebsiteChecksum(url):
-    fp = urllib.request.urlopen(args.url)
+    req = Request(args.url, headers={'User-Agent': 'Mozilla/5.0'})
+    fp = urlopen(req)
     checksum = hashlib.md5(fp.read()).hexdigest()
     fp.close()
     return checksum
