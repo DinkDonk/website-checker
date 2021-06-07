@@ -1,2 +1,1 @@
-playsound==1.2.1
-PyObjC==7.3; sys_platform == 'darwin'
+simpleaudio==1.0.4
