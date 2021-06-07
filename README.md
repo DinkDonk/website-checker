@@ -13,7 +13,7 @@ $ pip3 install -r requirements.txt
 ### Running
 
 ```bash
-$ python3 <URL> [--interval <interval>]
+$ python3 main.py <URL> [--interval <interval>]
 ```
 
 ### Example
